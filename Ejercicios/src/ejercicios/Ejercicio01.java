@@ -5,6 +5,7 @@
  */
 package ejercicios;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -17,6 +18,7 @@ public class Ejercicio01 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        try {
         Scanner entrada = new Scanner(System.in);
         double calificacion;
         double promedio;
@@ -32,5 +34,10 @@ public class Ejercicio01 {
 
         System.out.printf("%.2f\n", promedio);
     }
-    
+        catch (InputMismatchException inputMismatchException) {
+            
+            System.out.printf("Existe un error de tipo %s\n", 
+                    inputMismatchException);
+        }
+    }
 }
